@@ -1,2 +1,2 @@
 #!/bin/sh
-clbuild run any :space-fodder "(space-fodder:test)"
+clbuild run any :space-fodder "(space-fodder:space-fodder)"
