@@ -1,14 +1,5 @@
 ;;; -*- mode: lisp; indent-tabs: nil -*-
 
-
-
-;; TODO add the viewport to the screendrawing thingie
-;; TODO translate screen coords -> world coords
-;; TODO translate world coords -> screen coords
-
-
-;; TODO using-location macro?
-
 (defpackage space-fodder
   (:use :cl :sheeple :until-it-dies)
   (:shadowing-import-from :uid :step)
@@ -142,27 +133,12 @@
 		      (velocity velocity)
 		      (hero-engine engine)
 		      (rotation rotation))
-      *our-hero*
-      #+nil(setf (x destination) mouse-x
-	    (y destination) mouse-y
-	    ;; TODO : velocity vectory!
-	    ;; 07:06 < Ralith> schme: well, newposition - position is the line you'll have to traverse to get to it.
-	    ;; 07:07 < Ralith> divide that by the amount of time you want to take getting there and you have a velocity.
-	    ;; (200 200) => (230 250)  => (30 50)
-	    ;; translate (30 50) to actual distance to check time it will take (pix/sec)
-	    ;; and scale vector
-	    velocity (list )))))
+      *our-hero*)))
 
 (defreply update ((entity *our-hero*)
 		  dt &key)
   (declare (ignore dt))
   (it-moves-in-space *our-hero* dt)
-  ;; Q: how often is this update engine thing called?
-  ;; A: variable. use dt (deltatime) for figuring stuff out.
-  ;; I like to move it, move it.
-  ;; TODO: move this sucker
-  ;; TODO: accel, deaccel in movement
-
   )
 
 
